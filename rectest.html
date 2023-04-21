@@ -1,0 +1,25 @@
+<html>
+  <body>
+<!-- async reCAPTCHA library-->
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=en" async defer></script>
+
+<script>
+// 🍅 explicitly render reCAPTCHA
+var onloadCallback = function() {
+  grecaptcha.render("html_element", {
+    sitekey: "6Ld49bwhAAAAAHoNWyuKFzgRGIZT1IjkHjwvg0cf",
+    theme: "dark",
+    callback: enableBtn
+  });
+};
+
+// 🍆 callback on reCAPTCHA successful
+function enableBtn() {
+  alert("reCAPTCHA callback was just called");
+  submitBtn.disabled = false;
+  submitBtn.value = "Submit";
+}
+</script>
+
+  </body>
+</html>
